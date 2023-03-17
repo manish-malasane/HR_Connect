@@ -13,7 +13,7 @@
 			<thead>
 				<tr class="table_header">
 					<th> Name </th>
-					<th> email </th>
+					<th> Email </th>
 					<th> Phone </th>
 				</tr>
 			</thead>
@@ -21,7 +21,7 @@
 				{% for num, employees in final_dict.items() %}
 					<tr class="table_row">
 						<td class="table_cell"> {{ employees["Name"] }} </td>
-						<td class="table_cell"> {{ employees["email"] }} </td>
+						<td class="table_cell"> {{ employees["Email"] }} </td>
 						<td class="table_cell"> {{ employees["Phone"] }} </td>
 					</tr>
 				{% endfor %}

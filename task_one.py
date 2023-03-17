@@ -1,5 +1,4 @@
 from MyPackage.csv_file import HandleCSV
-from pprint import pprint
 
 
 def first_task():
@@ -10,7 +9,7 @@ def first_task():
         if int(i["SALARY"]) > 9000:
             final_dict[j] = {
                 "Name": (i["FIRST_NAME"] + " " + i["LAST_NAME"]),
-                "email": i["EMAIL"],
+                "Email": i["EMAIL"],
                 "Phone": i["PHONE_NUMBER"].replace(".", ""),
             }
             j += 1
