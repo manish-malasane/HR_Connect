@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task One</title>
+</head>
+
+<body>
+	<h1 align="center">Employees Data</h1>
+	<h2 align="center">This is table of Employees who's salary is below 9000$</h2>
+	{% if final_dict %}
+		<table class="table" align="center" width="50%">
+			<thead>
+				<tr class="table_header">
+					<th> Name </th>
+					<th> email </th>
+					<th> Phone </th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for num, employees in final_dict.items() %}
+					<tr class="table_row">
+						<td class="table_cell"> {{ employees["Name"] }} </td>
+						<td class="table_cell"> {{ employees["email"] }} </td>
+						<td class="table_cell"> {{ employees["Phone"] }} </td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p>No data found.</p>
+	{% endif %}
+</body>
+</html>

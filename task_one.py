@@ -5,14 +5,16 @@ from pprint import pprint
 def first_task():
     data = HandleCSV.read_entire_csv()
     final_dict = {}
+    j = 1
     for i in data:
         if int(i["SALARY"]) > 9000:
-            number = str(i["PHONE_NUMBER"]).split(".")
-            number = "".join(number)
-            final_dict["Name"] = i["FIRST_NAME"] + " " + i["LAST_NAME"]
-            final_dict["email"] = i["EMAIL"]
-            final_dict["phone number"] = number
-            pprint(final_dict)
+            final_dict[j] = {
+                "Name": (i["FIRST_NAME"] + " " + i["LAST_NAME"]),
+                "email": i["EMAIL"],
+                "Phone": i["PHONE_NUMBER"].replace(".", ""),
+            }
+            j += 1
+    return final_dict
 
 
 if __name__ == "__main__":

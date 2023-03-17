@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Two</title>
+</head>
+<body>
+<h1 align="center">Employees Data</h1>
+<h2 align="center">This is table of Employees Hire date and department is within range 30
+to 110 AND who's salary is > 4200$.</h2>
+	{% if final_dict %}
+		<table class="table" align="center" width="50%">
+			<thead>
+				<tr class="table_header">
+					<th align="left">Joining Date</th>
+					<th align="left">Employees</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for date, emp in final_dict.items() %}
+					<tr>
+						<td class="table_cell">{{ date }}</td>
+						<td class="table_cell">{{ emp }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p>No employees found.</p>
+	{% endif %}
+</body>
+</html>
